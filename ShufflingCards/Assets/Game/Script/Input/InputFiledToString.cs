@@ -7,32 +7,32 @@ public class InputFiledToString : MonoBehaviour
     [SerializeField] TMP_InputField inputLevel;
     [SerializeField] TextMeshProUGUI textDisplay;
 
-    public int inputSelected = 0;
+    public int selectionIndex = 0;
 
     public void StoreString() {
         textDisplay.text = inputName.text + ": " + inputLevel.text;
     }
 
-    private void Update() 
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab) && Input.GetKey(KeyCode.LeftShift))
         {
-            inputSelected--;
-            if (inputSelected < 0) inputSelected = 1;
+            selectionIndex--;
+            if (selectionIndex < 0) selectionIndex = 1;
             SelectInputField();
         }
 
         else if (Input.GetKeyDown(KeyCode.Tab))
         {
-            inputSelected++;
-            if (inputSelected > 1) inputSelected = 0;
+            selectionIndex++;
+            if (selectionIndex > 1) selectionIndex = 0;
             SelectInputField();
         }
     }
 
     private void SelectInputField()
     {
-        switch (inputSelected)
+        switch (selectionIndex)
         {
             case 0: inputName.Select();
                 break;
@@ -40,4 +40,8 @@ public class InputFiledToString : MonoBehaviour
                 break;
         }
     }
+
+    public void NameSelected() { selectionIndex = 0; }
+
+    public void LevelSelected() { selectionIndex = 1; }
 }
