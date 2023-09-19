@@ -3,10 +3,11 @@ using TMPro;
 
 public class InputFiledToString : MonoBehaviour
 {
-    [SerializeField] TMP_InputField inputField;
+    [SerializeField] TMP_InputField inputName;
+    [SerializeField] TMP_InputField inputLevel;
     [SerializeField] TextMeshProUGUI textDisplay;
 
     public void StoreString() {
-        textDisplay.text = inputField.text;
+        textDisplay.text = inputName.text + ": " + inputLevel.text;
     }
 }
