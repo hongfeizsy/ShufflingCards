@@ -11,6 +11,13 @@ public class InputFiledToString : MonoBehaviour
 
     public void StoreString() {
         textDisplay.text = inputName.text + ": " + inputLevel.text;
+
+        inputName.Select();
+        inputName.text = "";
+        inputLevel.Select();
+        inputLevel.text = "";
+        
+        selectionIndex = 0;
     }
 
     private void Update()
