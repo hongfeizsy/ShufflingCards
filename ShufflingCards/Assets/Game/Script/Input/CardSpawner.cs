@@ -35,15 +35,11 @@ public class CardSpawner : MonoBehaviour
                 inputLevel.Select();
                 break;
             case 2:
-                print("Gender field selected.");
                 inputGender.Select();
                 break;
             case 3:
                 enterButton.Select();
                 break;
-            // default:
-            //     enterButton.Select();
-            //     break;
         }
     }
 
